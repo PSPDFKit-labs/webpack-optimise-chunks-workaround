@@ -25,7 +25,7 @@ function Bootstrap(baseUri) {
         }
 
         let bundles = [
-            
+            "main.js","vendors-node_modules_core-js_modules_es_object_to-string_js-node_modules_core-js_modules_es_p-72d9dd.js","runtime.js"
         ]
 
         loadNextScript(bundles)

@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const bootstrap = require('./bootstrap.plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -21,7 +22,8 @@ module.exports = {
 
   plugins: [
     new webpack.ProgressPlugin(),
-    new bootstrap.BootstrapPlugin()
+    new bootstrap.BootstrapPlugin(),
+    new HtmlWebpackPlugin(),
   ],
 
   optimization: {

@@ -1,4 +1,5 @@
 const fs = require('fs');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // Optimised Chunks require you to inject the Javascript
 // files into the HTML page but this isn't always fesiable
@@ -8,19 +9,19 @@ class BootstrapPlugin {
 
     apply(compiler) {
 
+        compiler.hooks.compilation.tap('Bootstrap Plugin', (compilation) => {
 
-        compiler.hooks.afterEmit.tap('Bootstrap Plugin', (compilation) => {
+            const hooks = HtmlWebpackPlugin.getHooks(compilation);
 
-            // @todo: Steal Script Logic from https://github.com/jantimon/html-webpack-plugin
-            //
-            // console.log(compilation)
-            // console.log(compilation.emittedAssets)
-            // console.log(compilation.comparedForEmitAssets)
+            hooks.beforeAssetTagGeneration.tap('Bootstrap Plugin', ({ assets }) => {
 
-            const bundles = [...compilation.emittedAssets].map(url => {
-                return '"' + url + '"';
-            });
+                const { js } = assets;
 
+                const bundles = js.reverse().map(url => {
+                    return '"' + url + '"';
+                });
+
+ 
             const bootstrapScript = `
             
 function Bootstrap(baseUri) {
@@ -65,10 +66,13 @@ window.HelloWorld = {
 }
             `
 
-            const outputPath = compilation.outputOptions.path;
-            fs.writeFile(outputPath + '/' + 'bootstrap.js', bootstrapScript, (err) => {
-                console.log(err)
+                const outputPath = compilation.outputOptions.path;
+                fs.writeFile(outputPath + '/' + 'bootstrap.js', bootstrapScript, (err) => {
+                    console.log(err)
+                })
             })
+
+
         });
     }
 }
