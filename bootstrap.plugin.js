@@ -1,4 +1,4 @@
-const fs = require('fs');
+const { sources } = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // Optimised Chunks require you to inject the Javascript
@@ -65,11 +65,7 @@ window.HelloWorld = {
     }
 }
             `
-
-                const outputPath = compilation.outputOptions.path;
-                fs.writeFile(outputPath + '/' + 'bootstrap.js', bootstrapScript, (err) => {
-                    console.log(err)
-                })
+                compilation.emitAsset('bootstrap.js', new sources.RawSource(bootstrapScript, true));
             })
 
 

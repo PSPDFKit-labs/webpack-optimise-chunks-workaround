@@ -5,17 +5,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-
-  devServer: {
-    contentBase: path.join(__dirname, 'public'),
-  },
-
   entry: {
     main: './src/index.js'
   },
 
   output: {
-    path: path.resolve(__dirname, 'public/build'),
     library: 'HelloWorld',
     libraryTarget: 'umd',
   },
