@@ -17,3 +17,4 @@ to bundle your application
 ## Bugs
 
 - Promise Polyfill for Bootstrap
+- HelloWorld is {} on dev server
