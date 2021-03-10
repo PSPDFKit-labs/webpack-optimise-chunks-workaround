@@ -14,3 +14,7 @@ export function run() {
         log(result.value)
     })
 }
+
+export function load() {
+    alert('Loaded!')
+}

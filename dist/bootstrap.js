@@ -36,7 +36,7 @@ window.HelloWorld = {
     load: (baseUri) => {
         return Bootstrap(baseUri)
         .then(() => {
-            return window.HelloWorld
+            return window.HelloWorld.load()
         })
     }
 }
