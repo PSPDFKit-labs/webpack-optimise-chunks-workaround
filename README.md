@@ -20,4 +20,5 @@ to bundle your application
 - HelloWorld is {} on dev server
 - Update Catalog to wait for bootstrap
 - PSPDFKit is still undefined on window 
+- IE11 and non IE11 bundles (Disable boostrap + chunk opts for IE11)
 - Open Webpack issue
