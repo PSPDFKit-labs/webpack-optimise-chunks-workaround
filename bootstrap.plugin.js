@@ -8,9 +8,14 @@ class BootstrapPlugin {
 
     apply(compiler) {
 
+
         compiler.hooks.afterEmit.tap('Bootstrap Plugin', (compilation) => {
 
-            console.log(compilation.emittedAssets)
+            // @todo: Steal Script Logic from https://github.com/jantimon/html-webpack-plugin
+            //
+            // console.log(compilation)
+            // console.log(compilation.emittedAssets)
+            // console.log(compilation.comparedForEmitAssets)
 
             const bundles = [...compilation.emittedAssets].map(url => {
                 return '"' + url + '"';
