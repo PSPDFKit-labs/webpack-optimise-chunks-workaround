@@ -5,6 +5,10 @@ const bootstrap = require('./bootstrap.plugin');
 module.exports = {
   mode: 'development',
 
+  devServer: {
+    contentBase: path.join(__dirname, 'public'),
+  },
+
   entry: {
     main: './src/index.js'
   },

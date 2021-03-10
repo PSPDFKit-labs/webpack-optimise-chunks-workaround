@@ -4,7 +4,8 @@
   "description": "My webpack project",
   "main": "index.js",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "start": "webpack serve"
   },
   "author": "",
   "license": "ISC",
