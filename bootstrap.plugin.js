@@ -10,6 +10,8 @@ class BootstrapPlugin {
 
         compiler.hooks.afterEmit.tap('Bootstrap Plugin', (compilation) => {
 
+            console.log(compilation.emittedAssets)
+
             const bundles = [...compilation.emittedAssets].map(url => {
                 return '"' + url + '"';
             });
