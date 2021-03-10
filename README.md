@@ -22,3 +22,5 @@ to bundle your application
 # Todo
 - PSPDFKit is still undefined on window 
 - IE11 and non IE11 bundles (Disable boostrap + chunk opts for IE11)
+- Analyise what is in numbered chunk
+- Bundle library so that big chunks like pspdfkit.pdf is in main folder
