@@ -23,4 +23,4 @@ to bundle your application
 - Wait PSPDFKit to be loaded before examples are started in catalog
 - Split `load` into `init` and `load` method.  
 - Give vendor chunk a nice name
-- Bundle library so that big chunks like pspdfkit.pdf is in pspdfkit-lib folder
+- Bundle library so that main, runtime and vendor chunks is in pspdfkit-lib folder
