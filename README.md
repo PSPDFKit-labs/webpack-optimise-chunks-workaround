@@ -21,5 +21,5 @@ to bundle your application
 
 # Todo
 - PSPDFKit is still undefined on window 
-- Analyise what is in numbered chunk
-- Bundle library so that big chunks like pspdfkit.pdf is in main folder
+- Give vendor chunk a nice name
+- Bundle library so that big chunks like pspdfkit.pdf is in pspdfkit-lib folder
